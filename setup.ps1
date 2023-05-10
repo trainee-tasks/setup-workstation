@@ -38,6 +38,7 @@ $destination_folder = "C:\repos"
 # Define an array of repository URLs to clone
 $repository_urls = @(
     "https://github.com/trainee-tasks/calculator-js.git"
+    "https://github.com/trainee-tasks/ToDoList-js.git"
 )
 
 # Clone each repository into the destination folder
