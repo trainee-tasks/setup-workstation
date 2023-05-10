@@ -22,8 +22,7 @@ foreach ($application in $applications) {
 }
 
 # Reload the path variable in the current PowerShell session
-$env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine")
-Write-Host "Path variable: $env:Path"
+$env:Path = [Environment]::GetEnvironmentVariable("Path", "User")
 
 # Array of extensions to install
 $extensions = @(
