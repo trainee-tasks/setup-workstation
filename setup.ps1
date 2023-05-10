@@ -10,13 +10,16 @@ else {
 }
 
 # Install Visual Studio Code using Winget
-Write-Host "Installing Visual Studio Code..."
-winget install --exact --id Microsoft.VisualStudioCode
-Write-Host "Visual Studio Code installed successfully!"
+$applications = @(
+    "Git.Git"
+    "Microsoft.VisualStudioCode"
+)
 
-Write-Host "Installing Git..."
-winget install --exact --id Git.Git
-Write-Host "Git installed successfully!"
+foreach ($application in $applications) {
+    Write-Host "Installing $application..."
+    winget install --exact --id $application --accept-package-agreements --accept-source-agreements
+    Write-Host "$application installed successfully!"
+}
 
 # Array of extensions to install
 $extensions = @(
