@@ -10,5 +10,5 @@ git clone https://github.com/trainee-tasks/setup-workstation.git
 
 ### running directly the script without cloning repository
 ```
-Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/trainee-tasks/setup-workstation/main/setup.ps1").Content
+Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/trainee-tasks/setup-workstation/main/setup.ps1" -UseBasicParsing).Content
 ```
