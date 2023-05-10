@@ -2,6 +2,8 @@
 Sets the workstation for the trainee up.
 
 ## run
+Running as Admin will skip UAC confirmation.
+
 ### cloning the repository
 ```cmd
 git clone https://github.com/trainee-tasks/setup-workstation.git
