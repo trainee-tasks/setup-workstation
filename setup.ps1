@@ -21,18 +21,18 @@ foreach ($application in $applications) {
     Write-Host "$application installed successfully!"
 }
 
+# Reload the path variable in the current PowerShell session
+$env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine")
+Write-Host "Path variable: $env:Path"
+
 # Array of extensions to install
 $extensions = @(
     "ritwickdey.liveserver"
 )
 
 # Install each extension using the VSCode command-line interface
-$vscode_path = (Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* |
-    Where-Object { $_.DisplayName -eq "Visual Studio Code" }).InstallLocation
-$vscode_exe = Join-Path $vscode_path "bin\code.cmd"
-
 foreach ($extension in $extensions) {
-    & $vscode_exe --install-extension $extension
+    code --install-extension $extension
 }
 
 # Define the folder to clone the repositories into
